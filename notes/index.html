@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes — Franky Colon</title>
+<meta name="description" content="Straight notes on how contractors actually get found, priced and hired — from 12 years inside construction-tech and home-services lead generation." />
+<link rel="canonical" href="https://frankycolon.com/notes/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://frankycolon.com/notes/" />
+<meta property="og:title" content="Notes — Franky Colon" />
+<meta property="og:description" content="How contractors actually get found, priced and hired. From inside the lead business." />
+<meta property="og:image" content="https://frankycolon.com/assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Notes — Franky Colon" />
+<meta name="twitter:description" content="How contractors actually get found, priced and hired. From inside the lead business." />
+<meta name="twitter:image" content="https://frankycolon.com/assets/og-image.png" />
+
+<link rel="icon" type="image/png" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="/assets/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;0,900;1,800&amp;family=Outfit:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --cream:#F2EFE8; --cream-2:#FBFAF5; --espresso:#15120C;
+    --ink:#16130D; --ink-soft:#5C584F;
+    --line:rgba(22,19,13,0.10); --line-strong:rgba(22,19,13,0.16);
+    --yellow:#F8EC20;
+    --shadow:0 28px 60px -28px rgba(64,52,28,0.28);
+    --shadow-sm:0 14px 34px -18px rgba(64,52,28,0.22);
+    --ease:cubic-bezier(0.32,0.72,0,1);
+    --ease-out:cubic-bezier(0.16,1,0.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--cream);color:var(--ink);font-family:"Outfit",system-ui,sans-serif;
+    line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--yellow);color:#000}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  .grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:0.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .glow{position:fixed;z-index:0;pointer-events:none;width:74vw;height:74vw;max-width:820px;max-height:820px;
+    right:-22vw;top:-14vw;border-radius:50%;
+    background:radial-gradient(circle, rgba(248,236,32,0.22) 0%, rgba(248,236,32,0.06) 38%, transparent 66%);
+    filter:blur(30px);}
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.26em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:500;display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--yellow);display:inline-block;
+    box-shadow:0 0 0 4px rgba(248,236,32,0.18)}
+  .eyebrow.on-dark{color:var(--yellow)}
+  .eyebrow.on-dark::before{box-shadow:0 0 12px rgba(248,236,32,0.8)}
+  .hl{position:relative;color:var(--ink);white-space:nowrap;z-index:0}
+  .hl::before{content:"";position:absolute;left:-3px;right:-5px;top:16%;bottom:9%;background:var(--yellow);
+    z-index:-1;transform:rotate(-1.4deg);border-radius:3px}
+
+  /* NAV */
+  .nav-shell{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:18px 20px;transition:transform .5s var(--ease)}
+  .nav{display:flex;align-items:center;gap:30px;padding:11px 12px 11px 22px;border-radius:999px;
+    background:rgba(251,250,245,0.72);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);
+    border:1px solid var(--line-strong);box-shadow:0 12px 34px -18px rgba(64,52,28,0.4),inset 0 1px 0 rgba(255,255,255,0.6)}
+  .nav-logo{height:21px;width:auto}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--ink-soft);font-weight:500;letter-spacing:-.01em;transition:color .4s var(--ease)}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-cta{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:#100D06;font-weight:600;font-size:14px;
+    padding:9px 9px 9px 18px;border-radius:999px;letter-spacing:-.01em;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .nav-cta .ic{width:26px;height:26px;border-radius:50%;background:rgba(16,13,6,0.16);display:flex;align-items:center;justify-content:center;transition:transform .5s var(--ease)}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(248,236,32,0.6)}
+  .burger{display:none;flex-direction:column;gap:5px;width:28px;height:28px;justify-content:center;align-items:center;cursor:pointer;background:none;border:none}
+  .burger span{width:18px;height:2px;background:var(--ink);border-radius:2px;transition:transform .45s var(--ease),opacity .3s var(--ease)}
+  .mobile-menu{position:fixed;inset:0;z-index:45;background:rgba(242,239,232,0.94);backdrop-filter:blur(22px);
+    display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 32px;opacity:0;visibility:hidden;
+    transition:opacity .5s var(--ease),visibility .5s var(--ease)}
+  .mobile-menu.open{opacity:1;visibility:visible}
+  .mobile-menu a{font-family:"Archivo";font-weight:800;font-size:34px;letter-spacing:-.03em;color:var(--ink);
+    transform:translateY(28px);opacity:0;transition:transform .6s var(--ease),opacity .6s var(--ease)}
+  .mobile-menu.open a{transform:translateY(0);opacity:1}
+  .mobile-menu a .n{font-family:"JetBrains Mono";font-size:13px;color:var(--ink-soft);margin-right:14px;font-weight:400;vertical-align:middle}
+
+  /* HEAD */
+  .page-head{padding:150px 0 20px}
+  .page-head h1{font-family:"Archivo";font-weight:900;font-size:clamp(2.6rem,7vw,5.2rem);line-height:0.94;
+    letter-spacing:-.04em;margin:22px 0 24px;font-variation-settings:"wght" 900,"wdth" 88}
+  .page-head p{color:var(--ink-soft);font-size:1.12rem;font-weight:300;max-width:56ch;line-height:1.65}
+
+  /* LIST */
+  .notes{padding:56px 0 30px}
+  .note-row{display:grid;grid-template-columns:150px 1fr 60px;gap:30px;align-items:center;
+    padding:36px 8px;border-top:1px solid var(--line);position:relative;transition:padding .5s var(--ease)}
+  .note-row:last-of-type{border-bottom:1px solid var(--line)}
+  .note-row::before{content:"";position:absolute;left:0;top:0;height:100%;width:0;background:rgba(248,236,32,0.14);
+    transition:width .5s var(--ease);z-index:-1}
+  .note-row:hover{padding-left:22px}
+  .note-row:hover::before{width:100%}
+  .note-tag{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .note-row h2{font-family:"Archivo";font-weight:800;font-size:clamp(1.4rem,2.9vw,2.1rem);letter-spacing:-.035em;
+    line-height:1.1;margin-bottom:10px;color:var(--ink)}
+  .note-row p{color:#54514A;font-size:1rem;font-weight:300;max-width:62ch;line-height:1.6}
+  .note-row .go{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-strong);display:flex;
+    align-items:center;justify-content:center;flex:none;color:var(--ink);
+    transition:transform .5s var(--ease),background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
+  .note-row:hover .go{background:var(--yellow);border-color:var(--yellow);color:#100D06;transform:translate(3px,-3px)}
+
+  .upcoming{padding:26px 0 90px}
+  .upcoming .t{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:22px}
+  .up-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .up-card{border-radius:22px;background:var(--cream-2);border:1px dashed var(--line-strong);padding:26px 24px}
+  .up-card h3{font-family:"Archivo";font-weight:800;font-size:1.12rem;letter-spacing:-.025em;line-height:1.2;
+    color:var(--ink);margin-bottom:8px}
+  .up-card p{color:var(--ink-soft);font-size:.92rem;font-weight:300;line-height:1.55}
+
+  /* CTA */
+  .cta-card{border-radius:34px;background:var(--espresso);box-shadow:0 40px 90px -36px rgba(40,30,10,0.45);
+    overflow:hidden;margin-bottom:90px}
+  .cta-inner{background:linear-gradient(150deg,#1C1810,#15120C 55%);padding:clamp(36px,5vw,62px);position:relative;overflow:hidden}
+  .cta-inner::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-140px;bottom:-160px;
+    background:radial-gradient(circle,rgba(248,236,32,0.16),transparent 68%)}
+  .cta-inner h3{font-family:"Archivo";font-weight:900;font-size:clamp(1.8rem,3.6vw,2.8rem);letter-spacing:-.04em;
+    line-height:1;margin:16px 0 16px;color:#FBFAF5;position:relative;z-index:1}
+  .cta-inner p{color:#C9C5BA;font-weight:300;max-width:50ch;position:relative;z-index:1}
+  .btn{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:15px;letter-spacing:-.01em;
+    padding:14px 14px 14px 24px;border-radius:999px;cursor:pointer;position:relative;z-index:1;
+    transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .btn .ic{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .5s var(--ease)}
+  .btn-primary{background:var(--yellow);color:#100D06}
+  .btn-primary .ic{background:rgba(16,13,6,0.16)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(248,236,32,0.65)}
+  .btn-primary:hover .ic{transform:translate(3px,-3px) scale(1.06)}
+  .cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+
+  footer{padding:60px 0 46px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+  .foot .meta{font-family:"JetBrains Mono";font-size:12px;color:var(--ink-soft);letter-spacing:.04em;line-height:1.9}
+  .foot .meta a{border-bottom:1px solid transparent;transition:border-color .3s var(--ease)}
+  .foot .meta a:hover{border-color:var(--ink)}
+  .foot-logo{height:26px}
+
+  .reveal{opacity:0;transform:translateY(30px);filter:blur(8px);
+    transition:opacity .9s var(--ease-out),transform .9s var(--ease-out),filter .9s var(--ease-out)}
+  .reveal.in{opacity:1;transform:none;filter:none}
+
+  @media(max-width:980px){
+    .up-grid{grid-template-columns:1fr 1fr}
+    .note-row{grid-template-columns:1fr 54px;gap:20px}
+    .note-tag{grid-column:1 / -1;margin-bottom:-14px}
+  }
+  @media(max-width:760px){
+    .nav-links,.nav-cta{display:none}
+    .burger{display:flex}
+    .nav{padding:11px 16px 11px 20px}
+    .wrap{padding:0 20px}
+    .page-head{padding:120px 0 10px}
+    .up-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none;filter:none}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="glow"></div>
+
+<div class="nav-shell" id="navShell">
+  <nav class="nav">
+    <a href="/#top"><img class="nav-logo" src="/assets/franky-logo-dark.png" alt="Franky Colon" /></a>
+    <div class="nav-links">
+      <a href="/notes/" class="active">Notes</a><a href="/#leadwise">LeadWise</a><a href="/#work">Work With Me</a><a href="/gear/">Gear</a><a href="/guide/">Guide</a><a href="/#connect">Connect</a>
+    </div>
+    <a href="/#connect" class="nav-cta">Let's talk <span class="ic">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/notes/"><span class="n">01</span>Notes</a>
+  <a href="/#leadwise"><span class="n">02</span>LeadWise</a>
+  <a href="/#work"><span class="n">03</span>Work With Me</a>
+  <a href="/gear/"><span class="n">04</span>Gear</a>
+  <a href="/guide/"><span class="n">05</span>Guide</a>
+  <a href="/#connect"><span class="n">06</span>Connect</a>
+</div>
+
+<div class="wrap page-head reveal">
+  <span class="eyebrow">Notes</span>
+  <h1>How contractors<br>actually <span class="hl">get hired.</span></h1>
+  <p>Twelve years in construction-tech and home-services lead generation taught me exactly how a job gets priced, packaged and routed before it reaches your phone. These are the notes — no pitch, no gate, no email required to read them.</p>
+</div>
+
+<div class="wrap notes">
+  <a href="/notes/anatomy-of-a-lead/" class="note-row reveal">
+    <span class="note-tag">The Lead Business</span>
+    <div>
+      <h2>What actually happens to your $85 lead.</h2>
+      <p>A lead is a product with a cost to produce, a price, a margin and a distribution model. Here's how one gets built, priced and split — and why cost per lead is the wrong number to be watching.</p>
+    </div>
+    <span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+  </a>
+</div>
+
+<div class="wrap upcoming reveal">
+  <div class="t">In the works</div>
+  <div class="up-grid">
+    <div class="up-card">
+      <h3>Why the first contractor to answer wins</h3>
+      <p>Speed-to-lead is the most under-priced advantage in the trades. What the window actually looks like, and how to close it without hiring anyone.</p>
+    </div>
+    <div class="up-card">
+      <h3>Your Google profile is your real homepage</h3>
+      <p>Most homeowners decide before they ever reach your site. What they're looking at instead, and what to fix first.</p>
+    </div>
+    <div class="up-card">
+      <h3>What ChatGPT says when someone asks for a contractor</h3>
+      <p>Buyers are asking AI for recommendations now. Where those answers come from, and how a local business ends up in one.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cta-card reveal">
+    <div class="cta-inner">
+      <span class="eyebrow on-dark">Own your search</span>
+      <h3>Rather see it than read about it?</h3>
+      <p>LeadWise builds you a real site from your Google Business Profile before you pay for anything. Look at it, keep it or don't — no call required to see it.</p>
+      <div class="cta-row">
+        <a href="https://leadwiseconnect.com/build" target="_blank" rel="noopener" class="btn btn-primary">See your site built free <span class="ic">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <img class="foot-logo" src="/assets/franky-logo-dark.png" alt="franky. colon" />
+    <div class="meta">
+      © <span id="yr"></span> Franky Colon — Tampa, FL<br>
+      Websites &amp; marketing for contractors · <a href="https://leadwiseconnect.com" target="_blank" rel="noopener">LeadWise Connect</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+  let open=false;
+  function toggle(state){open=state??!open;mm.classList.toggle('open',open);
+    const s=burger.children;
+    s[0].style.transform=open?'translateY(7px) rotate(45deg)':'';
+    s[1].style.opacity=open?'0':'1';
+    s[2].style.transform=open?'translateY(-7px) rotate(-45deg)':'';}
+  burger.addEventListener('click',()=>toggle());
+  mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggle(false)));
+  let lastY=0;const shell=document.getElementById('navShell');
+  window.addEventListener('scroll',()=>{const y=window.scrollY;
+    shell.style.transform=(y>lastY&&y>300&&!open)?'translateY(-130%)':'translateY(0)';lastY=y;},{passive:true});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
